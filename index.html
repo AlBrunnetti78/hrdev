@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRDEV</title>
+     
+    <link rel="stylesheet" href="style-colors.css">
+    <link rel="stylesheet" href="style-root.css">
+    <link rel="stylesheet" href="myElements.css">
+
+    <script src="skills.js"></script>
+    <script src="devsRecord.js"></script>
+ 
+                
+       
+
+</head>
+<body class="m-0 font">
+
+    <!-- The header defines developer/recruiter mode selection buttons -->
+    <header class="flex flex-column align-items-center justify-content-center w-full">
+        
+        <div class="flex fadein animation-duration-1000"><h1><a href="" onclick="swi('none', 'none', 'block')"><img class="sm:width 100px" src="img/hrdev_logo.png" alt="logo hrdev"></a></h1></div>
+
+        <nav class="flex flex-wrap justify-content-center align-items-center gap-4">
+            <button class="button bg-blue-600 shadow-2 zoomin animation-duration-200 animation-delay-0" id="join" onclick="swiBut('none', 'block', 'block')" style="display: block;">JOIN</button>
+            <button class="button bg-blue-600 shadow-2 zoominright animation-duration-500 animation-delay-0" id="devs" onclick="swi('block', 'none', 'none')" style="display: none;">Developer</button>
+            <button class="button bg-blue-600 shadow-2 zoominleft animation-duration-500 animation-delay-0" id="hr" onclick="swi('none', 'block', 'none')" style="display: none;">Recruiter</button>
+        </nav>
+    </header>
+    <!--END-->
+
+
+
+
+    <!--Developer section, fill in the fields with your experience and known technologies. -->
+    <main id="devsMain" class="p-0" style="display: none;">
+        <div class="flex align-items-center justify-content-center"><h1>Developer Page</h1></div>
+
+        <!--this is a bar for messages, chat or other cominication system -->
+        <div id="messageBar" class="flex flex-wrap w-12 bg-white" style="min-height: 100px;">
+            <div id="alertInfo" class="flex flex-wrap flex-grow-1 align-items-center justify-content-center text-center w-12 md:w-12 lg:w-3 xl:w-1 m-2 p-2 border-gray-800 border-1 scalein animation-duration-800 animation-delay-100">
+               here will comes messeges / chat or other comunication system 
+            </div>
+            <div id="mailUsername" class="flex flex-wrap align-items-center justify-content-center text-center w-12 md:w-12 lg:w-3 xl:w-1 m-2 p-2 bg-gray-300 border-gray-800 border-1 scalein animation-duration-800 animation-delay-200">
+                mail username not added yet
+            </div>
+            <div id="skillAddedNum" class="flex flex-wrap align-items-center justify-content-center text-center w-12 md:w-12 lg:w-3 xl:w-1 m-2 p-2 bg-gray-300 border-gray-800 border-1 scalein animation-duration-800 animation-delay-300">
+                You have 0 POINT
+            </div>
+        </div>
+
+        <div class="flex flex-wrap w-12 h-full bg-white">
+
+            <!--this div allows you to choose your username and password-->
+            <div id="cDevsSetData" class="flex flex-column align-items-center justify-content-center text-center w-12 md:w-12 lg:w-3 xl:w-1 h-18rem m-2 p-2 bg-blue-600 border-round text-white" style="min-width: 300px; display: block;">
+                <label for="username">choose a username</label>
+                <input id="username" type="text" name="username">
+                <label for="mail">your email</label>
+                <input id="mail" type="text" name="mail">
+                <button id="butAddMail">set data</button>
+                <p class="description">Add your email and choose a username<br> 
+                    Your email address will not be shown to other users</p>
+            </div>
+            <div id="cDevsUpdateData" style="min-width: 300px; display: none;">
+                <p class="description">Well done!<br>Now you can start add your skills</p>
+            </div>
+
+
+
+
+
+            <!--search skills-->
+            <div id="cDevs" class="flex flex-column w-12 md:w-12 lg:w-3 xl:w-1 m-2 p-1 h-18rem bg-gray-100 shadow-2 border-3 border-blue-600 border-round" style="min-width: 300px; overflow-y: scroll; ">
+                <div class="flex w-full align-items-center justify-content-center bg-blue-200 shadow-3">
+
+                        <input class="w-10 fixed relative m-2" type="text" id="search" name="search" placeholder="search" autocomplete="off" onfocus="loadMainSkills()">
+
+                </div>
+                <div class="w-12" id="resSkilsFound">
+
+                    <div class="selectSkill text-center m-4">Search for your known technologies. Then click on them to add them to your personal profile.</div>
+
+                </div>
+            </div>
+            <!--END SEARCH SKILLS-->
+
+            <div class="bg-blue-800">
+                
+            </div>
+
+            <div id="cDevs" class="flex flex-grow-1 w-12 md:w-12 lg:w-3 xl:w-1 m-2 p-2 bg-blue-700 border-round text-white">
+                <div class="flex flex-wrap w-12">
+                    <div id="addedSkills" class="flex flex-column w-12 lg:w-12 md:w-12 sm:w-12 h-18rem align-content-start justify-content-start" style="min-width: 300px; overflow-y: scroll; ">
+                        <div class="pan flex align-items-center justify-content-center font-bold text-white border-round m-2">
+                            <span>You did not add any skill's details yet</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cDevs" class="flex flex-grow-1 w-12 md:w-12 lg:w-3 xl:w-1 m-2 p-2 bg-blue-700 border-round text-white">
+                <div class="flex flex-wrap w-12">
+                    <div id="skillPanel" class="flex flex-column w-12 lg:w-12 md:w-12 sm:w-12 h-18rem align-content-start justify-content-start bg-blue-800" style="min-width: 300px; overflow-y: scroll; ">
+                        <div class="pan flex align-items-center justify-content-center font-bold text-white border-round m-2">
+                            <span>You did not add any skill's details yet</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <!--FINE-->
+
+
+    <!--sezione per recruiter compila il form con le tecnologie richieste -->
+    <main id="hrMain" class="p-0" style="display: none;">
+        <div class="flex align-items-center justify-content-center"><h1>Recruiter Page</h1></div>
+        <div class="flex flex-column align-items-center justify-content-center w-12 bg-blue-400">
+            <div id="cHr" class="flex w-8 m-2 p-2 bg-blue-100" style="min-width: 300px; min-height: 100px;">
+                <button onclick="showResultRecruiter()">search</button>
+            </div>
+            <div id="showResultRecruiter" class="flex flex-column w-8 m-2 p-2 bg-blue-100" style="min-width: 300px; min-height: 100px;">
+                <div class="developer flex w-12">no dev</div>
+            </div>
+        </div>
+    </main>
+    <!--FINE-->
+
+
+    <!--Section for recruiters: Fill out the form with the required technologies.-->
+    <main id="generalMain">
+        <div class="flex flex-column align-items-center justify-content-center">
+            <h1>THE PLACE</h1>
+            <h2 class="text-center sm:text-sm lg:text-lg font-italic font-bold">"Connecting Recruiters and Developers"</h2>
+        </div>
+        <div class="flex w-full">
+            <!-- <img class="w-12" src="img/banner.jpg" alt="developing banner image"> -->
+        </div>
+        <div class="flex flex-wrap w-full h-full bg-blue-600">
+            <div id="cMain" class="flex flex-grow-1 align-items-center justify-content-center md:w-12 lg:w-3 xl:w-1 m-3" style="min-width: 300px;">
+                <div class="flex border-1 border-white lg:w-8 ">
+                    <p class="text-white md:text-xl">Welcome to HURDEV.COM, where recruiters and developers meet. Discover how we streamline the recruitment and selection process.</p>
+                </div>  
+            </div>
+        </div>
+        <div class="flex flex-wrap w-full">
+            <div id="cMain" class="flex flex-grow-1 align-items-center justify-content-center md:w-12 lg:w-3 xl:w-1 m-3" style="min-width: 300px;">
+                <div class="flex lg:w-8 ">
+                    <p class="font-italic font-bold text-blue-600 ">See how easy it is to use HURDEV.COM. Take a look at our registration process and intuitive user interface.</p>
+                </div>  
+            </div>
+        </div>
+    </main>
+    <!--END-->
+
+
+    <footer>
+        <div class="flex w-12 h-18rem bg-blue-900"></div>
+    </footer>
+
+<script src="script.js"></script>    
+</body>
+</html>

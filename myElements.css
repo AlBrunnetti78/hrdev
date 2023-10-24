@@ -1,0 +1,36 @@
+.font{
+    font-family: verdana;
+    font-size: small;
+}
+
+p{
+    font-family: verdana;
+    font-size: 20pt;
+    text-align: center;
+    margin: 10px;
+}
+
+.button{
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    padding: 10px;
+}
+
+
+
+.button:hover{
+    width: 200px;
+    height: auto;
+    background-color: #26528c;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+}
+
+.description{
+    font-size: medium;
+}
+
