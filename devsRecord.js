@@ -30,7 +30,7 @@ const devsRecord = [
     ],
     [
         { mail: 'user4@mail.it', surname: 'user4' },
-        { skill: 'AI and Machine Learning APIs', years: 1, desc: 'user4 ai'},
+        { skill: 'web', years: 1, desc: 'user4 ai'},
         { skill: 'Vue.js', years: 0, desc: ''},
         { skill: 'WebAssembly', years: 0, desc: ''},
         { skill: 'Webpack', years: 0, desc: ''},

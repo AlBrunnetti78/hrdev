@@ -428,39 +428,36 @@ function searchDev() {
                               
 
                              let found = resultsSearch.find(result => result[0].mail === dev[0].mail);
-                              if (!found) {
-                                console.log('Mail included');
-                                resultsSearch.push( [{mail: dev[0].mail}, {skill: skillToSearch, years, desc}] );
-                              } else {
-                                console.log('Mail not included');
+                             let skill1 = resultsSearch.find(result1 => result1.skill === skillToSearch);
+                            
 
-                                found.push({skill: skillToSearch, years, desc});
-                                
-                              }                        
+                                if (!found) {
+                                    console.log('Mail included');
+                                    resultsSearch.push( [{mail: dev[0].mail}, {skill: skillToSearch, years, desc}] );
+                                } else if(!skill1) {
+                                    console.log('Mail not included');
+
+                                    const existingSkill = found.find(skill => skill.skill === skillToSearch);
+
+                                    if (!existingSkill) {
+                                        
+                                        found.push({ skill: skillToSearch, years, desc });
+                                    }
+
+                                }                        
                         }
                     }
                 }
             }
         }
 
-        console.log(resultsSearch);
-        return resultsSearch;
-  }
- 
-  
-searchDev();
 
-
-
-function showResultRecruiter(){
-
-
-        searchDev();
+    let doubleCheck = false;
 
     if(resultsSearch.length === 0){
         alert('to see results you need to fill a developer form');
         console.log(resultsSearch.length);
-    }else{
+    }else if(doubleCheck === false){
 
         let developers = document.querySelectorAll('.developer');
         for (let i = 0; i < developers.length; i++) {
@@ -485,16 +482,19 @@ function showResultRecruiter(){
                 document.getElementById('showResultRecruiter').appendChild(devCard);
             }
         }
-
     }
 }
     
+
+
+
 
 
 //on page loaded, call the function search() and addMailUsername
 function initial(){
     search();
     addMailUsername();
+
     
 }
 window.onload = initial;
