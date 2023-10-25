@@ -16,10 +16,11 @@ function generateRandomUser(id) {
     final.push(user);
 
     for (let i = 1; i <= 5; i++) {
+        let oneSkill = getRandomSkill();
         skill = {
-            skill: getRandomSkill(),
+            skill: oneSkill,
             years: Math.floor(Math.random() * 11),
-            desc: `Description for ${getRandomSkill()}`
+            desc: `Description for ${oneSkill}`
         };
         final.push(skill);
     }

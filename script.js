@@ -285,7 +285,7 @@ function skillPanel(id, arg1){
             <textarea name="description" placeholder="description">${desc}</textarea>
             
             <button id="save" class="button w-12 shadow-2 zoomin animation-duration-100 animation-delay-0" type="submit" value="Save Skill" style="background-color: red;">SAVE SKILL</button>
-            <button id="save" class="button w-12 shadow-2 zoomin animation-duration-100 animation-delay-0" type="submit" value="Save Skill" style="background-color: gray;">REMOVE SKILL</button>
+            <button id="save" class="button w-12 shadow-2 zoomin animation-duration-100 animation-delay-0" type="submit" value="Save Skill" style="background-color: gray;">REMOVE SKILL (demo button)</button>
         
         </div>
         `
@@ -472,7 +472,7 @@ function searchDev() {
             let myId = sessionStorage.getItem('id');
             if(resultsSearch[i] !== myId ){
                 let devCard = document.createElement('div');
-               devCard.className = 'developer';
+                //devCard.className = 'developer';
                 
                 devCard.innerHTML = `<div class="developer flex w-12 m-2">`;
                 devCard.innerHTML += `<div class="flex">${resultsSearch[i][0].mail}</div>`;
