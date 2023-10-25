@@ -474,7 +474,7 @@ function searchDev() {
                 let devCard = document.createElement('div');
                 //devCard.className = 'developer';
                 
-                devCard.innerHTML = `<div class="developer flex w-12 m-2">`;
+                devCard.innerHTML = `<div class="developer flex w-12 m-2 mt-5">`;
                 devCard.innerHTML += `<div class="flex">${resultsSearch[i][0].mail}</div>`;
 
                     for(let ix = 1; ix < resultsSearch[i].length; ix++){
