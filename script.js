@@ -452,12 +452,12 @@ function searchDev() {
         }
 
 
-    let doubleCheck = false;
+   
 
     if(resultsSearch.length === 0){
         alert('to see results you need to fill a developer form');
         console.log(resultsSearch.length);
-    }else if(doubleCheck === false){
+    }else{
 
         let developers = document.querySelectorAll('.developer');
         for (let i = 0; i < developers.length; i++) {
