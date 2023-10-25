@@ -30,7 +30,7 @@ const devsRecord = [
     ],
     [
         { mail: 'user4@mail.it', surname: 'user4' },
-        { skill: 'web', years: 1, desc: 'user4 ai'},
+        { skill: 'API Management Platforms (Apigee, AWS API Gateway)', years: 1, desc: 'user4 ai'},
         { skill: 'Vue.js', years: 0, desc: ''},
         { skill: 'WebAssembly', years: 0, desc: ''},
         { skill: 'Webpack', years: 0, desc: ''},
@@ -42,14 +42,4 @@ const devsRecord = [
 ];
 
 
-//show array total
-function showArrayDevs(){
-        for(i = 0; i < this.length; i++){ 
-            console.log( this );
-        }
-}
 
-//show single user
-function showArrayDev(){      
-            console.log( this );
-}

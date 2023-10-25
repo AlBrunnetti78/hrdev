@@ -399,7 +399,7 @@ function mailStorage(){
 //mailStorage();
 
 
-
+//console.log(devsRecord.length);
 
 const resultsSearch = [];
 
@@ -417,6 +417,7 @@ function searchDev() {
             for (let i = 0; i < devsRecord.length; i++) {
                 let dev = devsRecord[i];
 
+
                 if(devsRecord[i] !== devsRecord[myId]){
                     for(let ix = 1; ix < dev.length; ix++){
                         if(dev[ix].skill === skillToSearch ){
@@ -425,7 +426,6 @@ function searchDev() {
                             let years = dev[ix].years;
                             let desc = dev[ix].desc;
 
-                              
 
                              let found = resultsSearch.find(result => result[0].mail === dev[0].mail);
                              let skill1 = resultsSearch.find(result1 => result1.skill === skillToSearch);
@@ -434,10 +434,12 @@ function searchDev() {
                                 if (!found) {
                                     console.log('Mail included');
                                     resultsSearch.push( [{mail: dev[0].mail}, {skill: skillToSearch, years, desc}] );
+                                    
                                 } else if(!skill1) {
                                     console.log('Mail not included');
 
                                     const existingSkill = found.find(skill => skill.skill === skillToSearch);
+                                    
 
                                     if (!existingSkill) {
                                         
@@ -455,7 +457,7 @@ function searchDev() {
    
 
     if(resultsSearch.length === 0){
-        alert('to see results you need to fill a developer form');
+        alert('no result found');
         console.log(resultsSearch.length);
     }else{
 
@@ -494,7 +496,6 @@ function searchDev() {
 function initial(){
     search();
     addMailUsername();
-
     
 }
 window.onload = initial;
